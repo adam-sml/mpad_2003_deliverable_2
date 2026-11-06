@@ -87,7 +87,17 @@ The three columns I chose to create my story are:
 
 Use three hashtag symbols (`###`) to create a level 3 heading like this one. Please follow this template when it comes to level 1 and level 2 headings. However, you can use level 3 headings as you see fit.
 
-Insert text here.
+### My Analysis
+
+I used VIMO to check the quality of the description, opened dates, and closed dates colomns. According to Statistics Canada's video on the VIMO Analysis, valid data is data that isn't blank and within a valid range, invalid data has impossible values, missing data as blanks, and outliers as data with really big or small values (Government of Canada, Statistics Canada, 2026).
+
+**Valid:** The Opened dates data is valid, Every dates falls within 2024, and no request has a closed date before its opened date. Thought the dates only show as days, so we can't really go any more in depth.
+
+**Invalid:** The Closed dates data is invalid, as there are a few rows that show "/N", meaning there is no closed date. The description is also inconsistent because some categories like Noise had the french translation, but some rows were only in english.
+
+**Missing:** There are 219 requests that do not have a closed date because they are still labeled as "Active". Outside of my main 3 columns, it's also worth noting that nearly all of the addresses, latitudes, and longitudes are missing, but I assume that it's because it wouldn't feel right to have hundreds of thousands of people's addresses out in the open.
+
+**Outliers:** The median request took 7 days to close, but the average was 71 days, and the longest request to close took 610 days.
 
 Support your claims by citing relevant sources. Please follow [APA guidelines for in-text citations](https://apastyle.apa.org/style-grammar-guidelines/citations).
 
