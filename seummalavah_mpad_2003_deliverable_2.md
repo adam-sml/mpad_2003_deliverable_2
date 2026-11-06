@@ -44,19 +44,19 @@ This also shows how to create an ordered list. Simply put `1.` before each item.
 
 
 ### My Deliverable 2
-For this assignment, I analyzed a City of Ottawa dataset about 311 Service Requests in 2024. More specifically, I looked at the Bylaw services, the different request types, and the amount of requests in said request types.
+For this assignment, I analyzed a City of Ottawa dataset about 311 Service Requests in 2024. I focused on Bylaw Service Requests and how long they can take to close.
 
 [Open Ottawa dataset link](https://open.ottawa.ca/documents/37623f4b4c6440e792b0a75012c4405b/about)
 
-### How I imported the data in Microsoft Excel
+### How I imported the data in Google Sheets
 
 1. From the Open Ottawa "2024 Service Requests" link provided, I downloaded the data by clicking the "Download" button.
 
-2. From there, I opened *Google Drive*, clicked on "New" near the top left of the screen, and imported the data under "file upload"
+2. I opened *Google Drive*, clicked on "New", and imported the data under "file upload"
 
-3. After it's done uploading, I checked where my dataset was located. Once I found where it was, I clicked on the three dots on the right of the file. From there, I went to "Open with" and clicked "Google Sheets"
+3. After it's done uploading, I clicked on the three dots on the right of the file. From there, I went to "Open with" > "Google Sheets"
 
-4. It'll take a minute because the dataset is really big but once it's done loading, you should see the data set.
+4. The dataset is large, but you should see the dataset once it loads.
 
 ![Screenshot (Dataset before changes).png](<Screenshot (Dataset before changes).png>)<br>
 *Figure 1: The 311 Service Requests Dataset in Google Sheets immediately after importing.*
@@ -65,17 +65,17 @@ For this assignment, I analyzed a City of Ottawa dataset about 311 Service Reque
 
 ### General Observations of the Dataset
 
-The 311 Dataset has 319,311 lines/rows (excluding the headings) and 11 columns in total. As I've mentioned though, we are focusing solely on the Bylaw Requests, so that would leave us with 55,920 rows. This dataset seems to be missing things in some columns, such as the description, closed dates, latitude and longitude, etc. Therefore, It would need to be cleaned up in order to use it.
+The 311 Dataset has 319,311 lines/rows (excluding the headings) and 11 columns in total. But filtering to Bylaw Services will leave us with only 55,920 rows. This dataset seems to be missing things in some columns. Therefore, It would need to be cleaned up in order to use it.
 
 **The three columns I'm using for this deliverable**
 
 The three columns I chose to create my story are:
 
-1. **The Description** - This is one of, if not, the most important columns because it tells us the type of Bylaw request that is being dealt with.
+1. **The Description** - This is one of the most important columns because it tells us the type of Bylaw request that is being dealt with. This column has Nominal variables like "Animals" and "Noise"
 
-2. **Opened date** - This is the date of the call/request. This will be crucial for when we compare it with the last columns of my choosing
+2. **Opened date** - This is the date of the call/request. This will be crucial for when we compare it with the third column. This column deals with discrete variables that deal with whole days that the requests were made
 
-3. **Closed date** - This is the date of when the call/request has been resolved. Some requests take longer than others to resolve/process, which is what I want my thesis to be about. Though it seems like some dates are missing, which we will have to clean up later.
+3. **Closed date** - This is the date of when the call/request has been resolved. Some requests take longer than others to resolve/process, which is what I want my thesis to be about. This column also deals with discrete variables that deal with whole days that the requests were resolved.
 
 ### My Thesis/question
 
