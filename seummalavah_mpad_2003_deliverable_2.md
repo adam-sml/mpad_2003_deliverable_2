@@ -159,9 +159,25 @@ I then charted the 10 slowest types that have at least 200 requests. I left out 
 ![](chart.png)<br>
 *Figure 4: This exploratory chart shows the median days to close for the 10 slowest Bylaw request types with 200+ requests.*
 
+I used a horizontal bar chart because bars that start at the same baseline are easier to by length. There's only one category that we are measuring/tracking (Median for Days to close).
+
+"Parks - Unauthorized Activities" stood out among the rest, and had a median of 360 days across 2,595 requests, which is the slowest of any large type. Licensing was also slow: "Licensing - Info - Business Licensing Enforcement" has a median of 309 days, and "Animals - Dog Licensing" has 244 days. On the contrary, "Noise - Music", the type with most requests (roughly 5,000), has a median of 0 days, which implies that most of them got resolved on the same day.
+
+I learned that "slow" Bylaw service depends on the type of request. Complaints that need a quic response are closed right away, while parks and licensing requests take most of a year.
+
 ## 3. Delivering Data
 
-Insert text here.
+### My story idea
+
+The story I would want to dig into is the gap between how fast Bylaw services respond to complaints and how long sone requests take to close. In my data, noise complaints are usually closed the same day, but requests about unauthorized activities in parks have a median of 360 days.
+
+This pattern is similar to Ted Raymond's article about the concerning workloads that Bylaw officers deal with. Thought this article deals with response times rather than closed dates, it confirms what we have on the dataset when Raymond says "Officers are only responding to lower priority calls, such as maintenance complaints, within 96 hours around 74 per cent of the time, below the target of 80 per cent." (Raymond, 2024)
+
+### What else I would need for my story
+
+I would like to interview a Bylaw official, or officer, because I feel like they would know about the different calls they get better than anyone. I would need more answers from city and Bylaw officials and on how it defines "closed" and what reason is recorded when a request is closed. I would like to know if requests close after an officer visits or when a staff updates a record or something else.
+
+Aside from the interview, I would also want to look into the 311 Service Requests from other years, like in 2023 or 2025, to compare and see if there's a pattern with the days to close.
 
 ## 4. References
 
@@ -174,4 +190,8 @@ Bounegru, L., & Gray, J. (Eds.). (2021). *The Data Journalism Handbook 2: Toward
 
 ### My References
 
-1. 
+1. Statistics Canada. (2020, September 23). *Data accuracy and validation: Methods to ensure the quality of data* [Video]. https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008
+
+2. Raymond, T. (2024, May 17). *Workload concerns could prompt call for more bylaw officers in Ottawa*. CTV News Ottawa. https://ottawa.ctvnews.ca/workload-concerns-could-prompt-call-for-more-bylaw-officers-in-ottawa-1.6892348
+
+I used Claude AI to help me with count the number of Bylaw Services out of the over 300,000 requests from the original dataset. I also used Claude AI to help with how to write my citations, I tried using citationmachine on the internet for my last deliverable but I got points taken from that so I asked Claude AI to help me with that.
