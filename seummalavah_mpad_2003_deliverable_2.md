@@ -58,7 +58,7 @@ For this assignment, I analyzed a City of Ottawa dataset about 311 Service Reque
 
 4. The dataset is large, but you should see the dataset once it loads.
 
-![Screenshot (Dataset before changes).png](<Screenshot (Dataset before changes).png>)<br>
+![](<Screenshot (Dataset before changes).png>)<br>
 *Figure 1: The 311 Service Requests Dataset in Google Sheets immediately after importing.*
 
 [My Google Sheets of the Dataset](https://docs.google.com/spreadsheets/d/1YMwSm1Dj2-DSZF6gLM9tkGmtZRMoH25v/edit?usp=sharing&ouid=112580467285726575425&rtpof=true&sd=true)
@@ -79,7 +79,7 @@ The three columns I chose to create my story are:
 
 ### My Thesis/question
 
-**From the 311 Service Request in 2024, Do some requests take longer and which ones take the shortest vs the longest?**
+**From the 311 Service Request in 2024, What Service Requests take the longest time to close?**
 
 ## 2. Understanding Data
 
@@ -89,9 +89,9 @@ Use three hashtag symbols (`###`) to create a level 3 heading like this one. Ple
 
 ### My Analysis
 
-I used VIMO to check the quality of the description, opened dates, and closed dates colomns. According to Statistics Canada's video on the VIMO Analysis, valid data is data that isn't blank and within a valid range, invalid data has impossible values, missing data as blanks, and outliers as data with really big or small values (Government of Canada, Statistics Canada, 2026).
+I used VIMO to check the quality of the description, opened dates, and closed dates colomns. According to Statistics Canada's video on the VIMO Analysis, valid data is data that isn't blank and within a valid range, invalid data has impossible values, missing data is left blanks, and an outlier has data with really big or small values (Government of Canada, Statistics Canada, 2026).
 
-**Valid:** The Opened dates data is valid, Every dates falls within 2024, and no request has a closed date before its opened date. Thought the dates only show as days, so we can't really go any more in depth.
+**Valid:** The Opened dates data is valid, Every date falls within 2024, and no request has a closed date before its opened date. Thought the dates only show as days, so we can't really go any more in depth.
 
 **Invalid:** The Closed dates data is invalid, as there are a few rows that show "/N", meaning there is no closed date. The description is also inconsistent because some categories like Noise had the french translation, but some rows were only in english.
 
@@ -107,21 +107,57 @@ As seen in Bounegru & Gray (2011), a data visualization should be clear...
 
 ### 2.2. Cleaning Data
 
-Insert text here.
+To clean the data, I used six methods:
 
+1. **Sorting and copying:** I sorted the full dataset by type (A to Z), which grouped the Bylaw services rows together. Then, I copied those 55,920 rows into a new sheet labeled "Bylaw".
+
+2. **Removing duplicates:** I used Data > Data cleanup > remove duplicates on the "Service Request ID" column, to which there were no duplicates.
+
+3. **Finding and replacing:** I counted the `\N` placeholders in the "Closed date" columns first, then replaced every `\N` with a blank cell using Edit > Find and replace (matching the entire cell contents).
+
+```
+=COUNTIF(F2:F55921)
+```
+
+4. **Spliting:** Each description containing both English and French text has been seperated by a '|'. I split it so I had an English column to work with, then pasted the results as their respective values.
+
+```
+=SPLIT(D2, "|")
+```
+
+5. **Triming whitespace:** I used the "Trim whitespace" under Data cleanup on the new columns I made (the English and French descriptions) to remove the space left before the "|". It changed 91, 130 cells.
+
+6. **Freezing rows:** I froze the header row (from View > Freeze > 1 row) so the column names stayed visible while I scrolled through the different rows.
+
+7. **Sorting (Again):**Finally, I sorted by Closed date (A to Z), which moved the 219 requests with no closed date to the bottom of the dataset. I then made a "days to close" column to by subtracting the opened date from the closed date, and filled it down to the last request that had a closed date (row 55,702):
+
+```
+=F2-E2
+```
+![](cleaned-dataset.png)<br>
+*Figure 2: The Bylaw dataset after cleaning. Description (English) is result of the `SPLIT`, and "Days to close" is "Closed date" - "Opened date". The header row is frozen.*
 ### 2.3. Analyzing Data
 
-Insert text here.
+I chose Description and Days to close because my question is which types of Bylaw requests takes the longest to close. I first at the whole days to close column:
 
-**This section should include a screen capture of your pivot table, like so:**
+```
+=AVERAGE(L2:L55702)
+=MEDIAN(L2:L55702)
+=STDEV(L2:L55702)
+=MODE(L2:L55702)
+```
+The average is about 71 days, the median is 7 days, the standard deviation is about 122, and the mode is 0. The average was far above the median, so a few very slow requests pull it up. For that reason, I used the median in my pivot table.
 
-![](pivot-table-screen-capture.png)<br>
-*Figure 2: This pivot table shows...*
+The pivot table has the "Description (English) in the rows. The values are the `COUNTA` of Service Request ID, which counts the requests in each type, and the `MEDIAN` of Days to close. I sorted it by the median, from highest to lowest.
 
-**This section should also include a screen capture of your exploratory chart, like so:**
+![](pivot-table.png)<br>
+*Figure 3: This pivot table shows the number of requests and median days to close for each Bylaw request type.*
 
-![](chart-screen-capture.png)<br>
-*Figure 3: This exploratory chart shows...*
+I then charted the 10 slowest types that have at least 200 requests. I left out smaller types because I thought a median based on a few requests isn't reliable. An example of this is "Taxi - Bandit/Unlicensed" has a median of 275 days, but only 4 requests.
+
+
+![](chart.png)<br>
+*Figure 4: This exploratory chart shows the median days to close for the 10 slowest Bylaw request types with 200+ requests.*
 
 ## 3. Delivering Data
 
@@ -134,3 +170,8 @@ Include a list of your references here. Please follow [APA](https://apastyle.apa
 **Here's an example:**
 
 Bounegru, L., & Gray, J. (Eds.). (2021). *The Data Journalism Handbook 2: Towards A Critical Data Practice*. Amsterdam University Press. [https://ocul-crl.primo.exlibrisgroup.com/permalink/01OCUL_CRL/hgdufh/alma991022890087305153](https://ocul-crl.primo.exlibrisgroup.com/permalink/01OCUL_CRL/hgdufh/alma991022890087305153)
+
+
+### My References
+
+1. 
