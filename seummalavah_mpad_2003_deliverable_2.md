@@ -37,7 +37,7 @@ To include a screen capture, use the sample code below. Your images should be sa
 1. If you want to include the entire line of code, do the same thing, albeit with your entire code: `=IMPORTHTML("https://en.wikipedia.org/wiki/China"; "table", 5)`.
 1. Alternatively, you can put your code in an independent box using the template below:
 
-``` r
+```
 =IMPORTHTML("https://en.wikipedia.org/wiki/China"; "table", 5)
 ```
 This also shows how to create an ordered list. Simply put `1.` before each item.
@@ -129,7 +129,7 @@ To clean the data, I used six methods that I learned from "Module 7: Finding a S
 
 6. **Freezing rows:** I froze the header row (from View > Freeze > 1 row) so the column names stayed visible while I scrolled through the different rows.
 
-7. **Sorting (Again):**Finally, I sorted by Closed date (A to Z), which moved the 219 requests with no closed date to the bottom of the dataset. I then made a "days to close" column by subtracting the opened date from the closed date, and filled it down to the last request that had a closed date (row 55,702):
+7. **Sorting again:** Finally, I sorted by Closed date (A to Z), which moved the 219 requests with no closed date to the bottom of the dataset. I then made a "days to close" column by subtracting the opened date from the closed date, and filled it down to the last request that had a closed date (row 55,702):
 
 ```
 =F2-E2
