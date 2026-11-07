@@ -75,7 +75,7 @@ The three columns I chose to create my story are:
 
 2. **Opened date** - This is the date of the call/request. This will be crucial for when we compare it with the third column. This column deals with discrete variables that deal with whole days that the requests were made.
 
-3. **Closed date** - This is the date when the call/request has been resolved. Some requests take longer than others to resolve/process, which is what I want my thesis to be about. This column also deals with discrete variables that deal with whole days that the requests were resolved.
+3. **Closed date** - This is the date when the call/request has been resolved. Some requests take longer than others to resolve/process, which is what I want my thesis to be about. This column also deals with discrete variables that represent whole days that the requests were resolved.
 
 ### My Thesis/question
 
@@ -89,9 +89,9 @@ Use three hashtag symbols (`###`) to create a level 3 heading like this one. Ple
 
 ### My Analysis
 
-I used VIMO to check the quality of the description, opened dates, and closed dates colomns. According to Statistics Canada's video on the VIMO Analysis, valid data is data that isn't blank and within a valid range, invalid data has impossible values, missing data is left blanks, and an outlier has data with really big or small values (Government of Canada, Statistics Canada, 2026).
+I used VIMO to check the quality of the description, opened dates, and closed dates columns. According to Statistics Canada's video on the VIMO Analysis, valid data is data that isn't blank and within a valid range; invalid data has impossible values; missing data is left blank; and an outlier has data with really big or small values (Government of Canada, Statistics Canada, 2026).
 
-**Valid:** The Opened dates data is valid, Every date falls within 2024, and no request has a closed date before its opened date. Thought the dates only show as days, so we can't really go any more in depth.
+**Valid:** The Opened dates data is valid; every date falls within 2024, and no request has a closed date before its opened date. Though the dates only show as days, so we can't really go any more in depth.
 
 **Invalid:** The Closed dates data is invalid, as there are a few rows that show "/N", meaning there is no closed date. The description is also inconsistent because some categories like Noise had the french translation, but some rows were only in english.
 
@@ -111,25 +111,25 @@ To clean the data, I used six methods that I learned from "Module 7: Finding a S
 
 1. **Sorting and copying:** I sorted the full dataset by type (A to Z), which grouped the Bylaw services rows together. Then, I copied those 55,920 rows into a new sheet labeled "Bylaw".
 
-2. **Removing duplicates:** I used Data > Data cleanup > remove duplicates on the "Service Request ID" column, to which there were no duplicates.
+2. **Removing duplicates:** I used Data > Data cleanup > Remove duplicates on the "Service Request ID" column, which had no duplicates.
 
-3. **Finding and replacing:** I counted the `\N` placeholders in the "Closed date" columns first, then replaced every `\N` with a blank cell using Edit > Find and replace (matching the entire cell contents).
+3. **Finding and replacing:** I counted the `\N` placeholders in the "Closed date" column first, then replaced every `\N` with a blank cell using Edit > Find and replace (matching the entire cell contents).
 
 ```
 =COUNTIF(F2:F55921)
 ```
 
-4. **Spliting:** Each description containing both English and French text has been seperated by a '|'. I split it so I had an English column to work with, then pasted the results as their respective values.
+4. **Splitting:** Each description containing both English and French text has been separated by a '|'. I split it so I had an English column to work with, then pasted the results as their respective values.
 
 ```
 =SPLIT(D2, "|")
 ```
 
-5. **Triming whitespace:** I used the "Trim whitespace" under Data cleanup on the new columns I made (the English and French descriptions) to remove the space left before the "|". It changed 91, 130 cells.
+5. **Trimming whitespace:** I used the "Trim whitespace" under Data cleanup on the new columns I made (the English and French descriptions) to remove the space left before the "|". It changed 91, 130 cells.
 
 6. **Freezing rows:** I froze the header row (from View > Freeze > 1 row) so the column names stayed visible while I scrolled through the different rows.
 
-7. **Sorting (Again):**Finally, I sorted by Closed date (A to Z), which moved the 219 requests with no closed date to the bottom of the dataset. I then made a "days to close" column to by subtracting the opened date from the closed date, and filled it down to the last request that had a closed date (row 55,702):
+7. **Sorting (Again):**Finally, I sorted by Closed date (A to Z), which moved the 219 requests with no closed date to the bottom of the dataset. I then made a "days to close" column by subtracting the opened date from the closed date, and filled it down to the last request that had a closed date (row 55,702):
 
 ```
 =F2-E2
@@ -138,7 +138,7 @@ To clean the data, I used six methods that I learned from "Module 7: Finding a S
 *Figure 2: The Bylaw dataset after cleaning. Description (English) is result of the `SPLIT`, and "Days to close" is "Closed date" - "Opened date". The header row is frozen.*
 ### 2.3. Analyzing Data
 
-I chose Description and Days to close because my question is which types of Bylaw requests takes the longest to close. I first at the whole days to close column:
+I chose Description and Days to close because my question is which types of Bylaw requests take the longest to close. I first lookeda at the whole Days to Close column:
 
 ```
 =AVERAGE(L2:L55702)
