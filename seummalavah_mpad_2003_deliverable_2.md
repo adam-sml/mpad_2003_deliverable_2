@@ -44,17 +44,17 @@ This also shows how to create an ordered list. Simply put `1.` before each item.
 
 
 ### My Deliverable 2
-For this assignment, I analyzed a City of Ottawa dataset about 311 Service Requests in 2024. I focused on Bylaw Service Requests and how long they can take to close.
+For this assignment, I analyzed a City of Ottawa dataset about 311 Service Requests from 2024. I focused on Bylaw Service Requests and how long they take to close.
 
 [Open Ottawa dataset link](https://open.ottawa.ca/documents/37623f4b4c6440e792b0a75012c4405b/about)
 
-### How I imported the data in Google Sheets
+### How I imported the data into Google Sheets
 
 1. From the Open Ottawa "2024 Service Requests" link provided, I downloaded the data by clicking the "Download" button.
 
-2. I opened *Google Drive*, clicked on "New", and imported the data under "file upload"
+2. I opened *Google Drive*, clicked on "New", and imported the data under "File upload"
 
-3. After it's done uploading, I clicked on the three dots on the right of the file. From there, I went to "Open with" > "Google Sheets"
+3. After it finishes uploading, I clicked the three dots to the right of the file. From there, I went to "Open with" > "Google Sheets"
 
 4. The dataset is large, but you should see the dataset once it loads.
 
@@ -65,7 +65,7 @@ For this assignment, I analyzed a City of Ottawa dataset about 311 Service Reque
 
 ### General Observations of the Dataset
 
-The 311 Dataset has 319,311 lines/rows (excluding the headings) and 11 columns in total. But filtering to Bylaw Services will leave us with only 55,920 rows. This dataset seems to be missing things in some columns. Therefore, It would need to be cleaned up in order to use it.
+The 311 Dataset has 319,311 lines/rows (excluding the headings) and 11 columns in total. But filtering to Bylaw Services will leave us with only 55,920 rows. This dataset seems to be missing things in some columns. Therefore, it needs to be cleaned up before we can use it.
 
 **The three columns I'm using for this deliverable**
 
@@ -73,9 +73,9 @@ The three columns I chose to create my story are:
 
 1. **The Description** - This is one of the most important columns because it tells us the type of Bylaw request that is being dealt with. This column has Nominal variables like "Animals" and "Noise"
 
-2. **Opened date** - This is the date of the call/request. This will be crucial for when we compare it with the third column. This column deals with discrete variables that deal with whole days that the requests were made
+2. **Opened date** - This is the date of the call/request. This will be crucial for when we compare it with the third column. This column deals with discrete variables that deal with whole days that the requests were made.
 
-3. **Closed date** - This is the date of when the call/request has been resolved. Some requests take longer than others to resolve/process, which is what I want my thesis to be about. This column also deals with discrete variables that deal with whole days that the requests were resolved.
+3. **Closed date** - This is the date when the call/request has been resolved. Some requests take longer than others to resolve/process, which is what I want my thesis to be about. This column also deals with discrete variables that deal with whole days that the requests were resolved.
 
 ### My Thesis/question
 
@@ -107,7 +107,7 @@ As seen in Bounegru & Gray (2011), a data visualization should be clear...
 
 ### 2.2. Cleaning Data
 
-To clean the data, I used six methods:
+To clean the data, I used six methods that I learned from "Module 7: Finding a Story" (Marier, 2026):
 
 1. **Sorting and copying:** I sorted the full dataset by type (A to Z), which grouped the Bylaw services rows together. Then, I copied those 55,920 rows into a new sheet labeled "Bylaw".
 
@@ -163,7 +163,7 @@ I used a horizontal bar chart because bars that start at the same baseline are e
 
 "Parks - Unauthorized Activities" stood out among the rest, and had a median of 360 days across 2,595 requests, which is the slowest of any large type. Licensing was also slow: "Licensing - Info - Business Licensing Enforcement" has a median of 309 days, and "Animals - Dog Licensing" has 244 days. On the contrary, "Noise - Music", the type with most requests (roughly 5,000), has a median of 0 days, which implies that most of them got resolved on the same day.
 
-I learned that "slow" Bylaw service depends on the type of request. Complaints that need a quic response are closed right away, while parks and licensing requests take most of a year.
+I learned that "slow" Bylaw service depends on the type of request. Complaints that need a quick response are closed right away, while parks and licensing requests take most of a year.
 
 ## 3. Delivering Data
 
@@ -190,8 +190,10 @@ Bounegru, L., & Gray, J. (Eds.). (2021). *The Data Journalism Handbook 2: Toward
 
 ### My References
 
-1. Statistics Canada. (2020, September 23). *Data accuracy and validation: Methods to ensure the quality of data* [Video]. https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008
+Marier, J.-S. (2026). *Basic Data Analysis Techniques* [Video]. MPAD 2003A, Module: 7 Finding a Story. Carleton University. https://brightspace.carleton.ca/d2l/le/content/451355/viewContent/4810876/View
 
-2. Raymond, T. (2024, May 17). *Workload concerns could prompt call for more bylaw officers in Ottawa*. CTV News Ottawa. https://ottawa.ctvnews.ca/workload-concerns-could-prompt-call-for-more-bylaw-officers-in-ottawa-1.6892348
+Raymond, T. (2024, May 17). *Workload concerns could prompt call for more bylaw officers in Ottawa*. CTV News Ottawa. https://ottawa.ctvnews.ca/workload-concerns-could-prompt-call-for-more-bylaw-officers-in-ottawa-1.6892348
+
+Statistics Canada. (2020, September 23). *Data accuracy and validation: Methods to ensure the quality of data* [Video]. https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008
 
 I used Claude AI to help me with count the number of Bylaw Services out of the over 300,000 requests from the original dataset. I also used Claude AI to help with how to write my citations, I tried using citationmachine on the internet for my last deliverable but I got points taken from that so I asked Claude AI to help me with that.
